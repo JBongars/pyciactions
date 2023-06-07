@@ -28,3 +28,6 @@ class On:
             result['workflow_dispatch'] = {}
 
         return result
+        
+    def __getstate__(self):
+        return self.to_dict()

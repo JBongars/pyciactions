@@ -21,6 +21,8 @@ class Step:
                 else:
                     result[attr] = value
         return result
+    def __getstate__(self):
+        return self.to_dict()
 
 @dataclass
 class Job:
@@ -32,9 +34,19 @@ class Job:
 
     def to_dict(self):
         result = {
-            "runs-on": self.runs_on,
             "steps": [step.to_dict() for step in self.steps]
         }
-        additional_attrs = {k: v for k, v in vars(self).items() if v is not None and k not in result}
-        result.update(additional_attrs)
+        for attr, value in vars(self).items():
+            if attr in ["steps"]:
+                continue
+
+            if value is not None:
+                if attr == "if_":
+                    result["if"] = value
+                else:
+                    result[attr] = value
         return result
+
+    def __getstate__(self):
+        return self.to_dict()
+

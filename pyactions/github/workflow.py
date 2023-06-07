@@ -8,7 +8,7 @@ from .job import Job
 @dataclass
 class Workflow(IWorkflow):
     name: str
-    on: On
+    on: List[On]
     jobs: List[Job]
     permissions: Optional[Dict[str, str]] = None
     env: Optional[Dict[str, str]] = None
@@ -16,9 +16,12 @@ class Workflow(IWorkflow):
     def to_dict(self):
         result = {
             "name": self.name,
-            "on": self.on.to_dict(),
+            "on": [on.to_dict() for on in self.on],
             "jobs": {job.id: job.to_dict() for job in self.jobs},
         }
         additional_attrs = {k: v for k, v in vars(self).items() if v is not None and k not in result}
         result.update(additional_attrs)
         return result
+        
+    def __getstate__(self):
+        return self.to_dict()
