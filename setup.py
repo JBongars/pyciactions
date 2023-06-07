@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='pyactions',
+    name='pyciactions',
     version='1.0.0',
     description='Declarative builder for Github Action Scripts',
     author='Julien Bongars',
