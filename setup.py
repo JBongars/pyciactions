@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='pyciactions',
-    version='1.0.2',
+    version='1.0.3',
     description='Declarative builder for Github Action Scripts',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -16,4 +16,5 @@ setup(
         "dataclasses==0.6",
         "PyYAML==6.0"
     ],
+    url='https://github.com/JBongars/pyciactions',
 )
