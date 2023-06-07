@@ -6,5 +6,7 @@ setup(
     description='Declarative builder for Github Action Scripts',
     author='Julien Bongars',
     packages=['pyactions'],
-    install_requires=[],
+    install_requires=[
+        "dataclasses==0.6"
+    ],
 )
