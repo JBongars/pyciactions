@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from typing import Optional, List, Dict
+from pyactions import IWorkflow
 
 @dataclass
-class Workflow:
+class Workflow(IWorkflow):
     name: str
     on: On
     jobs: List[Job]
