@@ -1,0 +1,63 @@
+# Contributing Guidelines
+
+Thank you for considering contributing to this project! Contributions from the community help make this project better and more valuable to everyone. Please take a moment to review the following guidelines to ensure a smooth and effective contribution process.
+
+## Table of Contents
+- [How to Contribute](#how-to-contribute)
+- [Pull Requests](#pull-requests)
+- [Bug Reports](#bug-reports)
+- [Feature Requests](#feature-requests)
+- [Code Style and Guidelines](#code-style-and-guidelines)
+- [Documentation](#documentation)
+- [Contact](#contact)
+
+## How to Contribute
+
+1. Fork the repository and create a new branch based on the feature or bug you want to work on.
+2. Make your changes and ensure they follow the project's code style and guidelines.
+3. Write tests to cover any new functionality or changes you made.
+4. Commit your changes and provide a descriptive commit message.
+5. Push your branch to your forked repository.
+6. Open a pull request (PR) from your branch to the main repository.
+7. The project maintainers will review your PR and provide feedback or request changes if necessary.
+8. Once your PR is approved, it will be merged into the main repository.
+9. Congratulations! You've successfully contributed to the project.
+
+## Pull Requests
+
+- Pull requests should target the `main` branch.
+- Ensure your branch is up to date with the latest changes from the `main` branch before opening a pull request.
+- Provide a clear and descriptive title for your pull request.
+- Include a detailed description of the changes made in the pull request.
+- If your PR addresses an open issue, reference the issue number in the description using the `#issue_number` format.
+
+## Bug Reports
+
+- Before submitting a bug report, check if the issue has already been reported in the issue tracker.
+- Include a clear and concise description of the bug, including steps to reproduce it.
+- Provide any relevant error messages, screenshots, or logs that can help identify and troubleshoot the issue.
+- Mention the version of the project or any dependencies you are using.
+
+## Feature Requests
+
+- Before submitting a feature request, check if it has already been discussed or requested in the issue tracker or any other relevant forums.
+- Describe the feature you would like to see added and provide a clear rationale for why it would be beneficial.
+
+## Code Style and Guidelines
+
+- Follow the existing code style and guidelines used in the project.
+- Use meaningful variable and function names.
+- Write clear and concise comments to improve code readability.
+- Ensure your code is properly formatted and free from syntax errors.
+
+## Documentation
+
+- Help improve the project documentation by fixing typos, clarifying explanations, or adding new sections where necessary.
+- Document any new features or changes you make in your contributions.
+- Follow the documentation guidelines provided in the project.
+
+## Contact
+
+If you have any questions or need further assistance, feel free to reach out to the project maintainers via email or by opening an issue in the repository.
+
+We appreciate your interest and look forward to your contributions!
