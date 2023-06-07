@@ -7,6 +7,7 @@ setup(
     author='Julien Bongars',
     packages=['pyactions'],
     install_requires=[
-        "dataclasses==0.6"
+        "dataclasses==0.6",
+        "PyYAML==6.0"
     ],
 )
