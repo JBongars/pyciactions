@@ -1,3 +1,7 @@
+from dataclasses import dataclass
+from typing import List, Dict, Optional, Union, Any
+
+@dataclass
 class Step:
     name: str
     uses: Optional[str] = None
@@ -9,7 +13,14 @@ class Step:
     env: Optional[Dict[str, Any]] = None
 
     def to_dict(self):
-        return {k: v for k, v in vars(self).items() if v is not None}
+        result = {"name": self.name}
+        for attr, value in vars(self).items():
+            if value is not None:
+                if attr == "with_":
+                    result["with"] = value
+                else:
+                    result[attr] = value
+        return result
 
 @dataclass
 class Job:
