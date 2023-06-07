@@ -1,2 +1,5 @@
 __pycache__
 .venv
+pyciactions.egg-info
+build
+dist

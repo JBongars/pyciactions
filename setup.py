@@ -1,11 +1,17 @@
 from setuptools import setup
 
+with open('README.md', 'r') as fh:
+    long_description = fh.read()
+
 setup(
     name='pyciactions',
-    version='1.0.0',
+    version='1.0.2',
     description='Declarative builder for Github Action Scripts',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+
     author='Julien Bongars',
-    packages=['pyactions'],
+    packages=['pyciactions'],
     install_requires=[
         "dataclasses==0.6",
         "PyYAML==6.0"
