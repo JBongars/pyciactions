@@ -1,6 +1,13 @@
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Union, Any
 
+
+def format_run(s):
+    if isinstance(s, list):
+        return "\n".join(s)
+    return s
+
+
 @dataclass
 class Step:
     name: str
@@ -9,6 +16,7 @@ class Step:
     working_directory: Optional[str] = None
     shell: Optional[str] = None
     with_: Optional[Dict[str, Any]] = None
+    if_: Optional[str] = None
     id: Optional[str] = None
     env: Optional[Dict[str, Any]] = None
 
@@ -18,11 +26,17 @@ class Step:
             if value is not None:
                 if attr == "with_":
                     result["with"] = value
+                if attr == "if_":
+                    result["if"] = value
+                elif attr == "run":
+                    result["run"] = format_run(value)
                 else:
                     result[attr] = value
         return result
+
     def __getstate__(self):
         return self.to_dict()
+
 
 @dataclass
 class Job:
@@ -30,12 +44,11 @@ class Job:
     runs_on: str
     steps: List[Step]
     needs: Optional[List[str]] = None
+    permissions: Optional[Dict[str, str]] = None
     if_: Optional[str] = None
 
     def to_dict(self):
-        result = {
-            "steps": [step.to_dict() for step in self.steps]
-        }
+        result = {"steps": [step.to_dict() for step in self.steps]}
         for attr, value in vars(self).items():
             if attr in ["steps"]:
                 continue
@@ -49,4 +62,3 @@ class Job:
 
     def __getstate__(self):
         return self.to_dict()
-

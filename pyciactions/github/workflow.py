@@ -9,7 +9,7 @@ from .job import Job
 @dataclass
 class Workflow(IWorkflow):
     name: str
-    on: List[On]
+    on: On
     jobs: List[Job]
     permissions: Optional[Dict[str, str]] = None
     env: Optional[Dict[str, str]] = None
@@ -17,8 +17,8 @@ class Workflow(IWorkflow):
     def to_dict(self):
         result = {
             "name": self.name,
-            "on": [on.to_dict() for on in self.on],
-            "jobs": {job.id: job.to_dict() for job in self.jobs},
+            "on": self.on.to_dict(),
+            "jobs": {j.id: j.to_dict() for j in self.jobs},
         }
         additional_attrs = {
             k: v for k, v in vars(self).items() if v is not None and k not in result
